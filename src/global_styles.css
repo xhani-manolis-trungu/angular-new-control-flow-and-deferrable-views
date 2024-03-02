@@ -1,0 +1,9 @@
+/* Add application styles & imports to this file! */
+button:first-child {
+  margin-right: 1em;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
