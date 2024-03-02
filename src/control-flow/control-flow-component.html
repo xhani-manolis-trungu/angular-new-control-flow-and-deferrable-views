@@ -1,162 +1,19 @@
-<p>
-  No more wrestling with obscure directives and their attributes – just clear,
-  concise code that reads like plain English. Benefits Galore:
-  <li>
-    Enhanced Readability: Your templates become simpler and more intuitive,
-    improving code maintainability and collaboration.
-  </li>
-  <li>
-    Reduced Cognitive Load: No more mental gymnastics to decipher what complex
-    directive configurations mean.
-  </li>
-  <li>
-    Type Safety and Debugging: Type checking within control flow blocks leads to
-    fewer errors and easier debugging.
-  </li>
-  <li>
-    Performance Improvements: Streamlined code translates to better rendering
-    performance.
+<app-if-component></app-if-component>
 
-    <p>
-      did I mention there is no more unnecessary ng-container and ng-template
-      for conditional HTML blocks? This leads to much cleaner code with less
-      boilerplate.
-    </p>
-  </li>
-</p>
+<!-- @defer {
+  <app-if-component></app-if-component>
+} -->
 
-<section>
-  <h5>Change conditions:</h5>
-  <span>
-    <button (click)="showFirstSection()">1st Section</button>
-  </span>
+<app-ngfor-component></app-ngfor-component>
 
-  <span>
-    <button (click)="showSecondSection()">2nd Section</button>
-  </span>
+<!-- @defer {
+  <app-ngfor-component></app-ngfor-component>
+} -->
 
-  <span>
-    <button (click)="showFallBackSection()">FallBack Section</button>
-  </span>
-</section>
-<hr />
-<!-- Difference in size on the template betweeb old and new NgIf -->
-<h4>Old <u>*NgIf</u> directive:</h4>
-<section *ngIf="shouldShowFirstSection" id="section1">1st section</section>
+<app-switch-component></app-switch-component>
 
-<section
-  *ngIf="!shouldShowFirstSection && shouldShowSecondSection"
-  id="section2"
->
-  2nd section
-</section>
-
-<section
-  *ngIf="!shouldShowFirstSection && !shouldShowSecondSection"
-  id="fallback"
->
-  FallBack Section
-</section>
-
-<p>(check Elements on Dev tools)</p>
-<h4>New <u>&#64;if</u> directive:</h4>
-@if (shouldShowFirstSection) {
-<section id="section1">1st Section</section>
-} @else if (!shouldShowFirstSection && shouldShowSecondSection) {
-<section id="section2">2nd Section</section>
-} @else {
-<section id="fallback">FallBack Section</section>
-}
-
-<hr />
-
-<!-- Difference between  old and new ngFor loop -->
-<h4>Old *ngFor Loop</h4>
-<li *ngFor="let animal of animals; let i = index; trackBy: trackByMethod">
-  {{animal}} -> index: {{i}}
-</li>
-
-<p>Ng-containers below (check Elements on Dev tools)</p>
-<ng-container *ngIf="animals2.length">
-  <li *ngFor="let animal of animals">{{animal}}</li>
-</ng-container>
-<ng-container *ngIf="!animals2.length">
-  <li *ngFor="let animal of animals2">{{animal}}</li>
-</ng-container>
-
-<h4>New &#64;Loop</h4>
-@for (animal of animals; track animal) {
-<li>{{animal}} -> index: {{$index}}</li>
-}
-
-<h4>Empty Array</h4>
-@for (animal of animals2; track animals) {
-<li>{{animal}}</li>
-} @empty {
-<span>This is empty placeholder</span>
-}
-
-<div style="padding-top: 2em">
-  <span>
-    <button (click)="setContentType('IMAGE')">Static Image</button>
-  </span>
-
-  <span>
-    <button (click)="setContentType('GIF')">GIF</button>
-  </span>
-
-  <span>
-    <button (click)="setContentType()">Alt text</button>
-  </span>
-</div>
-
-<hr />
-
-<h4>Old *switch directive:</h4>
-<div>
-  <span [ngSwitch]="contentType">
-    <div *ngSwitchCase="'IMAGE'" class="placeholder-wrapper">
-      <img
-        src="https://cdn-images-1.medium.com/max/184/1*uJa0SU-F2NXVKhHTbP1HBw@2x.png"
-        alt="angular logo"
-      />
-    </div>
-    <div *ngSwitchCase="'GIF'" class="placeholder-wrapper">
-      <img
-        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFvNWM2NmQ2NGVuZjlqbXpjMnZ1Ym0zbHMyMG1yMTc3Y2FvZHh3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i6IqXuLaTdqRW/giphy.gif"
-      />
-    </div>
-    <div *ngSwitchDefault class="placeholder-wrapper">
-      <div class="load-wraper">
-        <div class="activity"></div>
-      </div>
-    </div>
-  </span>
-</div>
-
-<p>(check Elements on Dev tools)</p>
-<h4>New *switch directive:</h4>
-<div>
-  <span>
-    @switch(contentType) { @case ('IMAGE') {
-    <div class="placeholder-wrapper">
-      <img
-        src="https://cdn-images-1.medium.com/max/184/1*uJa0SU-F2NXVKhHTbP1HBw@2x.png"
-        alt="angular logo"
-      />
-    </div>
-    } @case ('GIF') {
-    <div class="placeholder-wrapper">
-      <img
-        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFvNWM2NmQ2NGVuZjlqbXpjMnZ1Ym0zbHMyMG1yMTc3Y2FvZHh3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i6IqXuLaTdqRW/giphy.gif"
-      />
-    </div>
-    } @default {
-    <div class="placeholder-wrapper">
-      <div class="load-wraper">
-        <div class="activity"></div>
-      </div>
-    </div>
-    } }
-  </span>
-</div>
+<!-- @defer (on viewport) {
+  <app-switch-component></app-switch-component>
+} @placeholder {
+  <p>Placeholder for switch directive</p>
+} -->

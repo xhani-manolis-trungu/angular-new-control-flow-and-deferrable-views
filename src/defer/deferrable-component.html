@@ -1,5 +1,7 @@
 @defer (when isVisible) {
-<app-sample-component appFoo />
-{{ 'foo' }} }
+    <app-sample-component appFoo />
+}
+
+<!-- <app-sample-component appFoo /> -->
 
 <button (click)="isVisible = !isVisible">Load {{isVisible}}</button>

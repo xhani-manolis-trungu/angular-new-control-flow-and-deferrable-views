@@ -13,12 +13,22 @@ import { DeferrableComponent } from './defer/deferrable-component';
       Learn more about Angular
     </a>
 
-    <hr>
-    <app-control-flow-component></app-control-flow-component>
-
-    <hr>
     <h2> &#64;Defer </h2>
     <app-deferrable-component></app-deferrable-component>
+    
+    <!-- @defer {
+      <app-deferrable-component></app-deferrable-component>
+    } -->
+
+    &nbsp;
+    <app-control-flow-component></app-control-flow-component>
+
+    <!-- @defer {
+      <app-control-flow-component></app-control-flow-component>
+    } -->
+
+    &nbsp;
+    
   `,
   imports: [ControlFlowComponent, DeferrableComponent],
 })
