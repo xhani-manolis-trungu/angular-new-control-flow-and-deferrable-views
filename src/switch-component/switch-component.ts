@@ -102,26 +102,27 @@ import { Component } from "@angular/core";
         <h4>New *switch directive:</h4>
         <div>
             <span>
-                @switch(contentType) { @case ('IMAGE') {
-                <div class="placeholder-wrapper">
-                    <img
-                    src="https://cdn-images-1.medium.com/max/184/1*uJa0SU-F2NXVKhHTbP1HBw@2x.png"
-                    alt="angular logo"
-                    />
-                </div>
-                } @case ('GIF') {
-                <div class="placeholder-wrapper">
-                    <img
-                    src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFvNWM2NmQ2NGVuZjlqbXpjMnZ1Ym0zbHMyMG1yMTc3Y2FvZHh3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i6IqXuLaTdqRW/giphy.gif"
-                    />
-                </div>
-                } @default {
-                <div class="placeholder-wrapper">
-                    <div class="load-wraper">
-                    <div class="activity"></div>
-                    </div>
-                </div>
-                } 
+                @switch(contentType) { 
+                    @case ('IMAGE') {
+                        <div class="placeholder-wrapper">
+                            <img
+                            src="https://cdn-images-1.medium.com/max/184/1*uJa0SU-F2NXVKhHTbP1HBw@2x.png"
+                            alt="angular logo"
+                            />
+                        </div>
+                    } @case ('GIF') {
+                        <div class="placeholder-wrapper">
+                            <img
+                            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmFvNWM2NmQ2NGVuZjlqbXpjMnZ1Ym0zbHMyMG1yMTc3Y2FvZHh3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i6IqXuLaTdqRW/giphy.gif"
+                            />
+                        </div>
+                    } @default {
+                        <div class="placeholder-wrapper">
+                            <div class="load-wraper">
+                            <div class="activity"></div>
+                            </div>
+                        </div>
+                    } 
                 }
             </span>
         </div>

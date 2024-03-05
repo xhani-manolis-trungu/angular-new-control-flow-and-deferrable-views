@@ -1,19 +1,27 @@
-<app-if-component></app-if-component>
-
-<!-- @defer {
+<section class="container" >
   <app-if-component></app-if-component>
-} -->
-
-<app-ngfor-component></app-ngfor-component>
-
-<!-- @defer {
+  
+    
+  <!-- @defer (on timer(3s)) {
+    <app-if-component style="background-color: yellowgreen"></app-if-component>
+  } @placeholder {
+    <p style="background-color: yellowgreen; width: 50%;">Placeholder for if directive</p>
+  } -->
+  
   <app-ngfor-component></app-ngfor-component>
-} -->
+  
+  <!-- @defer (on timer(2s)) {
+    <app-ngfor-component style="background-color: cadetblue"></app-ngfor-component>
+  } @placeholder {
+    <p style="background-color: cadetblue; width: 50%;">Placeholder for ngFor directive</p>
+  } -->
+  
+  <!-- <app-switch-component></app-switch-component> -->
+  
+  @defer (on viewport) {
+    <app-switch-component></app-switch-component>
+  } @placeholder {
+    <p>Placeholder for switch directive</p>
+  }
+</section>
 
-<app-switch-component></app-switch-component>
-
-<!-- @defer (on viewport) {
-  <app-switch-component></app-switch-component>
-} @placeholder {
-  <p>Placeholder for switch directive</p>
-} -->
